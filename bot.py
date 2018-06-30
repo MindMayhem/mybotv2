@@ -2,14 +2,13 @@ import telebot
 import time
 import datetime
 import MySQLdb
-import config
-from telebot import logger
-from MySQLdb import OperationalError
-from telebot import types
+
+token = "606278221:AAE4Q2TbDD3l2CfGiMMj2I2o7aG0n1tdrgs"
+
 
  #токен бота
 
-bot = telebot.TeleBot(config.token, threaded=False)  # подключение к боту (конфиг)
+bot = telebot.TeleBot(token, threaded=False)  # подключение к боту (конфиг)
 conn = MySQLdb.connect('149.202.217.219', 'telega_admin', 'sayder123', 'telegram_bot')
 print('Бот запущен - Daily Money')
 #cursor = config.conn.cursor()  # подключение к бд (конфиг)
@@ -70,7 +69,7 @@ def send_welcome(message):
             print('Пользователь {} пригласил {}'.format(user_id, unique_code))
             fetch_data("UPDATE `bot` SET `balance` = `balance` + 0.05 WHERE `chatid` = {}".format(unique_code))
             bot.send_message(user_id,"Вас пригласил пользователь с ID {}\nЕму начислено вознаграждение за приглашение\nЕсли хотите тоже получать по 0.05 за каждого приглашенного, то воспользуйтесь своей ссылкой, перейдя в раздел Партнёрская программа".format(unique_code))
-            config.conn.commit()
+            conn.commit()
     else:
         bot.send_message(user_id, "С возвращением! Мы скучали по вам!")
     mainmenu()
