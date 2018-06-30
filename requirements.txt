@@ -1,5 +1,12 @@
 telebot
 mysqlclient
-pysocks
+PySocks
 requests
 time
+urllib3
+idna
+pip
+schedule
+setuptools
+six
+certifi
