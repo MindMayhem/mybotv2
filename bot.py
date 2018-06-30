@@ -8,7 +8,7 @@ token = "606278221:AAE4Q2TbDD3l2CfGiMMj2I2o7aG0n1tdrgs"
 
  #токен бота
 
-bot = telebot.TeleBot(token, threaded=False)  # подключение к боту (конфиг)
+bot = telebot.TeleBot(token)  # подключение к боту (конфиг)
 conn = MySQLdb.connect('149.202.217.219', 'telega_admin', 'sayder123', 'telegram_bot')
 print('Бот запущен - Daily Money')
 #cursor = config.conn.cursor()  # подключение к бд (конфиг)
