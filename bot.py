@@ -3,7 +3,7 @@ import time
 import datetime
 import MySQLdb
 
-token = "606278221:AAE4Q2TbDD3l2CfGiMMj2I2o7aG0n1tdrgs"
+token = "*****"
 
 
  #токен бота
